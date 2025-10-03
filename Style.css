@@ -1,0 +1,118 @@
+/* الألوان الأساسية: الأسود والذهبي */
+:root {
+    --black: #0a0a0a; /* أسود غامق */
+    --gold-dark: #b8860b; /* لون ذهبي أساسي */
+    --gold-light: #ffd700; /* لون ذهبي فاتح/لامع */
+    --gold-hover: #ffdf60; /* لون ذهبي عند المرور */
+}
+
+/* خلفية الجسم الرئيسية - أسود غامق */
+body {
+    background-color: var(--black);
+    color: white;
+    font-family: 'Arial', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    text-align: center;
+    direction: rtl; /* لجعل النص يبدأ من اليمين ليتناسب مع اللغة العربية */
+}
+
+.container {
+    background-color: #1a1a1a; /* خلفية أغمق للكونتينر */
+    padding: 40px 60px;
+    border-radius: 15px;
+    box-shadow: 0 0 50px rgba(0, 0, 0, 0.5); /* ظل بسيط */
+}
+
+/* عنوان الموقع */
+.title {
+    font-size: 3em;
+    margin-bottom: 10px;
+    /* تأثير النص الذهبي اللامع */
+    color: var(--gold-light);
+    text-shadow: 0 0 10px var(--gold-dark), 
+                 0 0 20px var(--gold-light);
+    letter-spacing: 2px;
+}
+
+.description {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+    color: #ccc;
+}
+
+/* زر التنزيل الذهبي اللامع */
+.gold-button {
+    /* أساسيات الزر */
+    display: inline-block;
+    padding: 15px 40px;
+    font-size: 1.5em;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+    border: 2px solid var(--gold-dark);
+
+    /* تصميم اللون الذهبي اللامع */
+    background: linear-gradient(145deg, var(--gold-light) 0%, var(--gold-dark) 100%);
+    color: var(--black); /* نص أسود على الزر الذهبي */
+    box-shadow: 0 0 20px var(--gold-light); /* إضاءة (Glow) حول الزر */
+
+    /* الأيقونة والنص داخل الزر */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.button-text {
+    margin-left: 10px; /* مسافة بين النص والأيقونة */
+}
+
+.icon {
+    font-size: 1.2em;
+}
+
+
+/* التأثيرات التفاعلية (Hover and Active Effects) */
+
+/* عند مرور الماوس (Hover) */
+.gold-button:hover {
+    transform: translateY(-3px) scale(1.05); /* رفع وتكبير بسيط */
+    /* زيادة لمعان (Glow) عند المرور */
+    box-shadow: 0 0 30px var(--gold-light), 
+                0 0 50px var(--gold-hover);
+    background: linear-gradient(145deg, var(--gold-hover) 0%, var(--gold-dark) 100%);
+}
+
+/* عند الضغط على الزر (Active) */
+.gold-button:active {
+    transform: translateY(0); /* العودة لمكانه */
+    box-shadow: 0 0 10px var(--gold-dark); /* تقليل اللمعان قليلاً */
+}
+
+/* رسالة الحالة (تستخدم مع JavaScript) */
+.status-message {
+    margin-top: 25px;
+    font-size: 1.1em;
+    color: var(--gold-light);
+    min-height: 20px; /* للحفاظ على ارتفاع العنصر */
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* تأثير لمعان الخلفية (اختياري) */
+/* يمكننا إضافة بعض التأثيرات المتحركة على الجسم */
+@keyframes gold-pulse {
+    0% { box-shadow: 0 0 10px rgba(184, 134, 11, 0.5); }
+    50% { box-shadow: 0 0 30px rgba(255, 215, 0, 0.8); }
+    100% { box-shadow: 0 0 10px rgba(184, 134, 11, 0.5); }
+}
+
+.container {
+    /* ... (الخصائص السابقة) ... */
+    animation: gold-pulse 5s infinite alternate; /* تطبيق النبض الذهبي على الكونتينر */
+}
